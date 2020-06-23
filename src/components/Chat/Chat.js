@@ -18,7 +18,7 @@ const Chat = ({ location }) => {
     const [users, setUsers] = useState([]);
     const [rooms, setRooms] = useState([]);
 
-    const ENDPOINT = 'localhost:5000';
+    const ENDPOINT = 'https://srinu-chat-server.herokuapp.com';
 
     useEffect(() => {
         const { room, name } = queryString.parse(location.search);
