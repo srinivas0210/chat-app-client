@@ -1,0 +1,25 @@
+.messages {
+    background-color:black  ;
+    color:brown;
+    
+
+}
+
+.left {
+    
+    text-align:left;
+}
+
+.right {
+    
+    text-align:right;
+}
+
+.center {
+    text-align: center;
+}
+
+.name {
+    color:blue;
+    
+}
