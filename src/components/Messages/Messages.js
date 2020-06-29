@@ -1,15 +1,17 @@
 import React from 'react';
 import './Messages.css';
 
-const Messages = ({ messages, name }) => {
+const Messages = ({ messages, name,time }) => {
+    
     return (
         <div className="messages">{
+
             messages.map((message, i) => {
-                console.log('.........................', message);
+                
                 if (message.user === name) {
                     return <div key={i} className="right border">
                         <p class="name" >{message.user}</p>
-                        <div >{message.text}</div>
+                        <div >{message.time}</div>
                     </div>
                 }
                 else if (message.user === 'admin') {

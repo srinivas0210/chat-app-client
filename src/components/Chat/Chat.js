@@ -17,8 +17,10 @@ const Chat = ({ location }) => {
     const [messages, setMessages] = useState([]);
     const [users, setUsers] = useState([]);
     const [rooms, setRooms] = useState([]);
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
-    const ENDPOINT = 'https://srinu-chat-server.herokuapp.com';
+    const ENDPOINT = 'localhost:5000';
 
     useEffect(() => {
         const { room, name } = queryString.parse(location.search);
@@ -59,7 +61,7 @@ const Chat = ({ location }) => {
     const sendMessage = (event) => {
         event.preventDefault();
         console.log('1here');
-        socket.emit('sendMessage', message, () => setMessage(''));
+        socket.emit('sendMessage', {name,message,room,time}, () => setMessage(''));
     }
 
     return (
@@ -78,7 +80,7 @@ const Chat = ({ location }) => {
                     <h1>{room}</h1>
                 </div>
                 <div className="item-4">
-                    <Messages messages={messages} name={name} />
+                    <Messages messages={messages} name={name} time={time}/>
                 </div>
                 <div className="item-5">
 
