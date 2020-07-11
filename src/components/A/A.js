@@ -3,14 +3,14 @@ import { useState } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-import './App.css';
-import Join from '../components/Join/Join';
-import Chat from '../components/Chat/Chat';
-import Map from '../components/Map/Map';
-import Youtube from '../components/Youtube/Youtube';
+import './A.css';
+import Join from '../Join/Join';
+import Chat from '../Chat/Chat';
+import Map from '../Map/Map';
+import Youtube from '../Youtube/Youtube';
 
 
-const App = () => {
+const A = () => {
     return (
         <Router>
             <div className="flex-container">
@@ -49,4 +49,4 @@ const App = () => {
     )
 }
 
-export default App;
+export default A;

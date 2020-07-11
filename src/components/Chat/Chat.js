@@ -61,38 +61,25 @@ const Chat = ({ location }) => {
     const sendMessage = (event) => {
         event.preventDefault();
         console.log('1here');
-        socket.emit('sendMessage', {name,message,room,time}, () => setMessage(''));
+        socket.emit('sendMessage', { name, message, room, time }, () => setMessage(''));
     }
 
     return (
-        <div className="flex-container">
-            <div className="flex-item item-1">
-                <div className="item-11">
-                    <h1>Users</h1>
-                    <div>
-                        <Users users={users} name={name} />
-                    </div>
-                </div>
-                <div className="item-12">Room details</div>
+        <div className="flex-item item-2">
+            <div className="item-3">
+                <h1>{room}</h1>
             </div>
-            <div className="flex-item item-2">
-                <div className="item-3">
-                    <h1>{room}</h1>
-                </div>
-                <div className="item-4">
-                    <Messages messages={messages} name={name} time={time}/>
-                </div>
-                <div className="item-5">
+            <div className="item-4">
+                <Messages messages={messages} name={name} time={time} />
+            </div>
+            <div className="item-5">
 
-                    <input
-                        className="input"
-                        value={message}
-                        placeholder='type message...'
-                        onChange={(event) => setMessage(event.target.value)}
-                        onKeyPress={(event) => event.key === 'Enter' ? sendMessage(event) : null} />
-                </div>
-
-
+                <input
+                    className="input"
+                    value={message}
+                    placeholder='type message...'
+                    onChange={(event) => setMessage(event.target.value)}
+                    onKeyPress={(event) => event.key === 'Enter' ? sendMessage(event) : null} />
             </div>
         </div>
 
